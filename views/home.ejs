@@ -1,0 +1,30 @@
+
+<%- include("partials/header"); -%>
+
+  <div class="row mt-3 mb-3">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Home</h5>
+          <p class="card-text"><%= startingContent %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%  posts.forEach(function(post){ %>
+    <div class="row mb-3">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%=post.title%></h5>
+            <p class="card-text"><%=post.content.substring(0, 100) + " ..."%></p>
+            <a href="/posts/<%=post._id%>" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
